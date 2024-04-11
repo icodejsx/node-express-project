@@ -23,4 +23,8 @@ TodoInstance.init({
         type: sequelize_1.DataTypes.BOOLEAN,
         allowNull: false,
     },
+    userId: {
+        type: sequelize_1.DataTypes.UUIDV4,
+        allowNull: false
+    }
 }, { sequelize: dataBaseConfig_1.default, tableName: 'todos', });

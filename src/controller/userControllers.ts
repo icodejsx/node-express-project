@@ -31,7 +31,7 @@ export const RegisterUser =  async (req: Request, res: Response) => {
         phoneNumber,
         age
       })
-      res.status(200).json({
+     return res.status(200).json({
         message: "Registeration Successfully",
         newUser
       })

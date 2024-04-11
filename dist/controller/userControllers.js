@@ -37,7 +37,7 @@ const RegisterUser = (req, res) => __awaiter(void 0, void 0, void 0, function* (
                 phoneNumber,
                 age
             });
-            res.status(200).json({
+            return res.status(200).json({
                 message: "Registeration Successfully",
                 newUser
             });

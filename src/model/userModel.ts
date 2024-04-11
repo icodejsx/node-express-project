@@ -1,7 +1,8 @@
 
 import { Model, DataTypes } from "sequelize";
-
 import db from "../config/dataBaseConfig";
+import { TodoInstance } from "./todoModel";
+
 
 export interface UserAttribute{
     id: string;
@@ -52,3 +53,6 @@ UserInstance.init(
 {sequelize: db, tableName: 'users',}
 
 )
+
+UserInstance.hasMany(TodoInstance, { foreignKey: "userId", as : 'users' })
+TodoInstance.belongsTo(UserInstance, {foreignKey: 'userId', as : 'todos'})

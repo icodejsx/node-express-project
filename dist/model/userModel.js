@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserInstance = void 0;
 const sequelize_1 = require("sequelize");
 const dataBaseConfig_1 = __importDefault(require("../config/dataBaseConfig"));
+const todoModel_1 = require("./todoModel");
 class UserInstance extends sequelize_1.Model {
 }
 exports.UserInstance = UserInstance;
@@ -40,3 +41,5 @@ UserInstance.init({
         allowNull: false,
     }
 }, { sequelize: dataBaseConfig_1.default, tableName: 'users', });
+UserInstance.hasMany(todoModel_1.TodoInstance, { foreignKey: "userId", as: 'users' });
+todoModel_1.TodoInstance.belongsTo(UserInstance, { foreignKey: 'userId', as: 'todos' });

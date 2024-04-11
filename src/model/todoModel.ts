@@ -6,6 +6,7 @@ export interface TodoAttribute{
     id: string;
     description: string;
     completed: boolean;
+    userId?: string
     
 }
 
@@ -27,6 +28,10 @@ TodoInstance.init(
         type: DataTypes.BOOLEAN,
         allowNull: false,
         },
+        userId: {
+            type: DataTypes.UUIDV4,
+            allowNull:false
+          }
       
     },
 
