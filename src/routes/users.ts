@@ -1,9 +1,12 @@
 import express, { Request, Response } from "express";
+import { RegisterUser } from "../controller/userControllers";
+
+
+
 const router = express.Router();
 
 /* GET users listing. */
-router.get("/", (req: Request, res: Response) => {
-  res.send("respond with a resource");
-});
+router.post('/register_user', RegisterUser)
+
 
 export default router;
