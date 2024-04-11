@@ -12,8 +12,10 @@ export const RegisterSchema = Joi.object({
 })
 
 
-
-
+export const LoginSchema = Joi.object({
+      email: Joi.string().required(),
+    password: Joi.string().min(6).regex(/^[a-zA-Z0-9]{3,39}$/).required(),
+})
 
 
 export const option = {
