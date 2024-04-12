@@ -1,9 +1,9 @@
 import express, { Request, Response } from "express";
+import auth from "../middlewares/auth";
+
 const router = express.Router();
 
 /* GET home page. */
-router.get("/", (req: Request, res: Response) => {
-  res.render("index", { title: "Express" });
-});
+router.get('/')
 
 export default router;

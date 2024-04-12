@@ -1,5 +1,7 @@
 import { error } from "console";
+import exp from "constants";
 import Joi from "joi";
+import { CompletionTriggerKind } from "typescript";
 
 export const RegisterSchema = Joi.object({
     firstName: Joi.string().required(),
@@ -26,3 +28,17 @@ export const option = {
         },
     },
 };
+
+export const creatTodoSchema = Joi.object({
+    description: Joi.string().required,
+    CompletionTriggerKind: Joi.boolean().required
+
+
+})
+
+export const updateSchema = Joi.object({
+    description: Joi.string().required,
+    CompletionTriggerKind: Joi.boolean().required
+
+
+})
