@@ -11,7 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createTodo = void 0;
 const utils_1 = require("./../utils/utils");
-const todoModel_1 = require("../model/todoModel");
 const createTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { description, completed } = req.body;
@@ -21,10 +20,6 @@ const createTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         if (validateUser.error) {
             res.status(400).json({ Error: validateUser.error.details[0].message });
         }
-        const newTodo = yield todoModel_1.TodoInstance.create({
-            userId: id,
-            description,
-        });
     }
     catch (error) {
         console.log(error);
