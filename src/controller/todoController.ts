@@ -19,11 +19,11 @@ export const createTodo = async (req:Request | any, res:Response) => {
             res.status(400).json({Error: validateUser.error.details[0].message})
         }
 
-        // const newTodo = await TodoInstance.create({
-        //     userId: id,
-        //     description,
+        const newTodo = await TodoInstance.create({
+            userId: id,
+            description,
 
-        // })
+        })
 
 
     } catch (error) {
